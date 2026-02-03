@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mocha Mousse Coffee House</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<header
+			id="site-header"
+			class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+		>
+			<nav
+				class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
+			>
+				<div class="flex items-center gap-3">
+					<div
+						class="h-10 w-10 rounded-full bg-[var(--mocha)]/90 text-white flex items-center justify-center font-bold"
+					>
+						MM
+					</div>
+					<div>
+						<p class="script-font text-2xl text-[var(--mocha)]">
+							Mocha Mousse
+						</p>
+						<p class="text-xs uppercase tracking-[0.2em] text-[var(--forest)]">
+							Coffee House
+						</p>
+					</div>
+				</div>
+				<div class="hidden md:flex items-center gap-8 text-sm font-semibold">
+					<a href="#story" class="hover:text-[var(--mocha)]">Story</a>
+					<a href="#menu" class="hover:text-[var(--mocha)]">Menu</a>
+					<a href="#map" class="hover:text-[var(--mocha)]">Visit</a>
+					  <a href="#club" class="hover:text-[var(--mocha)]">Coffee Club</a>
+					  <a href="#contact" class="hover:text-[var(--mocha)]">Contact</a>
+				</div>
+				<button
+					class="hidden md:inline-flex items-center rounded-full border border-[var(--mocha)] px-5 py-2 text-sm font-semibold text-[var(--mocha)] hover:bg-[var(--mocha)] hover:text-white transition"
+					data-order
+				>
+					Order Online
+				</button>
+			</nav>
+		</header>
+
+		<main class="pt-24">
+			<section class="relative" id="story">
+				<div
+					class="h-[70vh] w-full bg-[url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1974&auto=format&fit=crop')] bg-cover bg-center"
+				></div>
+				<div
+					class="absolute inset-0 flex items-center justify-center px-6"
+				>
+					<div
+						class="glass max-w-xl rounded-3xl p-8 text-center text-white"
+					>
+						<p class="script-font text-4xl hero-text">Your Third Place</p>
+						<h1 class="mt-3 text-3xl font-semibold hero-text">
+							Storytelling brewed in every cup
+						</h1>
+						<p class="mt-4 text-sm text-white/90 hero-text">
+							A cozy corner for creatives, remote workers, and late-night
+							dreamers. Sip Mocha Mousse blends, explore our pastries, and feel
+							the calm of a design-led cafe.
+						</p>
+						<button
+							id="check-menu"
+							class="mt-6 inline-flex items-center gap-2 rounded-full bg-white/90 px-6 py-3 text-sm font-semibold text-[var(--mocha)] hover:bg-white transition"
+						>
+							Check Menu
+							<span aria-hidden="true">→</span>
+						</button>
+					</div>
+				</div>
+			</section>
+
+			<section class="mx-auto max-w-6xl px-6 py-16" id="menu">
+				<div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+					<div>
+						<p class="script-font text-4xl text-[var(--mocha)]">
+							Menu Highlights
+						</p>
+						<h2 class="text-2xl font-semibold">
+							Crafted for storytelling, brewed for clarity
+						</h2>
+					</div>
+					<div class="flex flex-wrap gap-3">
+						<button
+							class="menu-filter rounded-full border border-[var(--mocha)] px-5 py-2 text-sm font-semibold text-[var(--mocha)] transition hover:bg-[var(--mocha)] hover:text-white"
+							data-filter="all"
+						>
+							All
+						</button>
+						<button
+							class="menu-filter rounded-full border border-[var(--mocha)] px-5 py-2 text-sm font-semibold text-[var(--mocha)] transition hover:bg-[var(--mocha)] hover:text-white"
+							data-filter="coffee"
+						>
+							Coffee
+						</button>
+						<button
+							class="menu-filter rounded-full border border-[var(--mocha)] px-5 py-2 text-sm font-semibold text-[var(--mocha)] transition hover:bg-[var(--mocha)] hover:text-white"
+							data-filter="pastries"
+						>
+							Pastries
+						</button>
+						<button
+							class="menu-filter rounded-full border border-[var(--mocha)] px-5 py-2 text-sm font-semibold text-[var(--mocha)] transition hover:bg-[var(--mocha)] hover:text-white"
+							data-filter="tea"
+						>
+							Tea
+						</button>
+					</div>
+				</div>
+
+				<div
+					class="menu-grid mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+				>
+					<article
+						class="menu-item rounded-2xl bg-white p-6 shadow-sm"
+						data-category="coffee"
+					>
+						<div class="flex items-start justify-between">
+							<div>
+								<h3 class="text-lg font-semibold">Mocha Mousse Latte</h3>
+								<p class="text-sm text-slate-500">Silky cocoa, oat milk foam</p>
+							</div>
+							<span class="text-sm font-semibold text-[var(--mocha)]">$5.75</span>
+						</div>
+					</article>
+					<article
+						class="menu-item rounded-2xl bg-white p-6 shadow-sm"
+						data-category="coffee"
+					>
+						<div class="flex items-start justify-between">
+							<div>
+								<h3 class="text-lg font-semibold">Cedar Cold Brew</h3>
+								<p class="text-sm text-slate-500">Brown sugar, toasted spice</p>
+							</div>
+							<span class="text-sm font-semibold text-[var(--mocha)]">$5.20</span>
+						</div>
+					</article>
+					<article
+						class="menu-item rounded-2xl bg-white p-6 shadow-sm"
+						data-category="coffee"
+					>
+						<div class="flex items-start justify-between">
+							<div>
+								<h3 class="text-lg font-semibold">Forest Cappuccino</h3>
+								<p class="text-sm text-slate-500">Sage foam, espresso blend</p>
+							</div>
+							<span class="text-sm font-semibold text-[var(--mocha)]">$4.95</span>
+						</div>
+					</article>
+					<article
+						class="menu-item rounded-2xl bg-white p-6 shadow-sm"
+						data-category="pastries"
+					>
+						<div class="flex items-start justify-between">
+							<div>
+								<h3 class="text-lg font-semibold">Honey Almond Croissant</h3>
+								<p class="text-sm text-slate-500">Flaky layers, warm honey</p>
+							</div>
+							<span class="text-sm font-semibold text-[var(--mocha)]">$4.40</span>
+						</div>
+					</article>
+					<article
+						class="menu-item rounded-2xl bg-white p-6 shadow-sm"
+						data-category="pastries"
+					>
+						<div class="flex items-start justify-between">
+							<div>
+								<h3 class="text-lg font-semibold">Cinnamon Hearth Roll</h3>
+								<p class="text-sm text-slate-500">Maple glaze, soft crumble</p>
+							</div>
+							<span class="text-sm font-semibold text-[var(--mocha)]">$4.10</span>
+						</div>
+					</article>
+					<article
+						class="menu-item rounded-2xl bg-white p-6 shadow-sm"
+						data-category="pastries"
+					>
+						<div class="flex items-start justify-between">
+							<div>
+								<h3 class="text-lg font-semibold">Mocha Basque Tart</h3>
+								<p class="text-sm text-slate-500">Creamy center, cocoa crust</p>
+							</div>
+							<span class="text-sm font-semibold text-[var(--mocha)]">$4.95</span>
+						</div>
+					</article>
+					<article
+						class="menu-item rounded-2xl bg-white p-6 shadow-sm"
+						data-category="tea"
+					>
+						<div class="flex items-start justify-between">
+							<div>
+								<h3 class="text-lg font-semibold">Jasmine Meadow Tea</h3>
+								<p class="text-sm text-slate-500">Floral aroma, light finish</p>
+							</div>
+							<span class="text-sm font-semibold text-[var(--mocha)]">$4.00</span>
+						</div>
+					</article>
+					<article
+						class="menu-item rounded-2xl bg-white p-6 shadow-sm"
+						data-category="tea"
+					>
+						<div class="flex items-start justify-between">
+							<div>
+								<h3 class="text-lg font-semibold">Matcha Cloud</h3>
+								<p class="text-sm text-slate-500">Ceremonial matcha, vanilla</p>
+							</div>
+							<span class="text-sm font-semibold text-[var(--mocha)]">$4.60</span>
+						</div>
+					</article>
+					<article
+						class="menu-item rounded-2xl bg-white p-6 shadow-sm"
+						data-category="tea"
+					>
+						<div class="flex items-start justify-between">
+							<div>
+								<h3 class="text-lg font-semibold">Citrus Rooibos</h3>
+								<p class="text-sm text-slate-500">Orange peel, honey notes</p>
+							</div>
+							<span class="text-sm font-semibold text-[var(--mocha)]">$4.25</span>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<section class="bg-[var(--sage)]/15 py-16" id="map">
+				<div class="mx-auto max-w-6xl px-6 grid gap-10 lg:grid-cols-[1.2fr,0.8fr]">
+					<div class="rounded-3xl overflow-hidden shadow-sm">
+						<iframe
+							title="Mocha Mousse Coffee House"
+							class="h-80 w-full md:h-[420px]"
+							loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509354!2d144.95373631590416!3d-37.816279742021054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1f2b8b7%3A0x1fef3b1e3f3e2b28!2sCafe!5e0!3m2!1sen!2sus!4v1717171717171"
+							style="border:0;"
+							allowfullscreen=""
+						></iframe>
+					</div>
+					<div class="bg-white rounded-3xl p-8 shadow-sm">
+						<p class="script-font text-3xl text-[var(--mocha)]">Visit Us</p>
+						<h3 class="mt-2 text-xl font-semibold">
+							A calm corner in the city center
+						</h3>
+						<p class="mt-4 text-sm text-slate-600">
+							118 Storyline Lane, Downtown District · +1 (555) 010-2026
+						</p>
+						<div class="mt-6 space-y-3 text-sm">
+							<div class="flex items-center justify-between">
+								<span class="font-semibold text-[var(--forest)]">Mon - Fri</span>
+								<span>7:00 AM - 8:00 PM</span>
+							</div>
+							<div class="flex items-center justify-between">
+								<span class="font-semibold text-[var(--forest)]">Saturday</span>
+								<span>8:00 AM - 9:00 PM</span>
+							</div>
+							<div class="flex items-center justify-between">
+								<span class="font-semibold text-[var(--forest)]">Sunday</span>
+								<span>8:00 AM - 6:00 PM</span>
+							</div>
+						</div>
+						<button
+							class="mt-8 w-full rounded-full bg-[var(--mocha)] px-6 py-3 text-sm font-semibold text-white hover:bg-[#5c3f2b] transition"
+							data-directions
+						>
+							Get Directions
+						</button>
+					</div>
+				</div>
+			</section>
+
+			<section class="mx-auto max-w-6xl px-6 py-16" id="contact">
+				<div class="grid gap-10 lg:grid-cols-[0.9fr,1.1fr]">
+					<div>
+						<p class="script-font text-4xl text-[var(--mocha)]">Contact</p>
+						<h3 class="mt-2 text-2xl font-semibold">
+							Tell us about your perfect brew
+						</h3>
+						<p class="mt-4 text-sm text-slate-600">
+							We reply within 24 hours. For now, this is a front-end demo with
+							interactive feedback.
+						</p>
+						<div class="mt-6 flex gap-4">
+							<a
+								href="#"
+								data-social="Instagram"
+								class="h-10 w-10 rounded-full border border-[var(--mocha)] text-[var(--mocha)] flex items-center justify-center hover:bg-[var(--mocha)] hover:text-white transition"
+								aria-label="Instagram"
+							>
+								IG
+							</a>
+							<a
+								href="#"
+								data-social="TikTok"
+								class="h-10 w-10 rounded-full border border-[var(--mocha)] text-[var(--mocha)] flex items-center justify-center hover:bg-[var(--mocha)] hover:text-white transition"
+								aria-label="TikTok"
+							>
+								TT
+							</a>
+							<a
+								href="#"
+								data-social="YouTube"
+								class="h-10 w-10 rounded-full border border-[var(--mocha)] text-[var(--mocha)] flex items-center justify-center hover:bg-[var(--mocha)] hover:text-white transition"
+								aria-label="YouTube"
+							>
+								YT
+							</a>
+						</div>
+					</div>
+					<div class="rounded-3xl bg-white p-8 shadow-sm">
+						<form id="contact-form" class="grid gap-4">
+							<div>
+								<label class="text-sm font-semibold" for="name">Name</label>
+								<input
+									id="name"
+									name="name"
+									type="text"
+									required
+									class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-[var(--mocha)] focus:outline-none"
+									placeholder="Your name"
+								/>
+							</div>
+							<div>
+								<label class="text-sm font-semibold" for="email">Email</label>
+								<input
+									id="email"
+									name="email"
+									type="email"
+									required
+									class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-[var(--mocha)] focus:outline-none"
+									placeholder="you@email.com"
+								/>
+							</div>
+							<div>
+								<label class="text-sm font-semibold" for="message">Message</label>
+								<textarea
+									id="message"
+									name="message"
+									rows="4"
+									required
+									class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-[var(--mocha)] focus:outline-none"
+									placeholder="Tell us what you love..."
+								></textarea>
+							</div>
+							<button
+								class="mt-2 w-full rounded-full bg-[var(--mocha)] px-6 py-3 text-sm font-semibold text-white hover:bg-[#5c3f2b] transition"
+								type="submit"
+							>
+								Submit
+							</button>
+							<p
+								id="form-success"
+								class="form-success text-sm font-semibold text-[var(--forest)]"
+							>
+								Thanks for reaching out! We'll respond soon.
+							</p>
+						</form>
+					</div>
+				</div>
+			</section>
+
+			<section class="mx-auto max-w-6xl px-6 py-16" id="club">
+				<div class="rounded-3xl bg-[var(--mocha)] text-white p-10 grid gap-6 md:grid-cols-[1.3fr,0.7fr]">
+					<div>
+						<p class="script-font text-4xl">Coffee Club</p>
+						<h3 class="mt-2 text-2xl font-semibold">
+							Monthly rituals, curated for members
+						</h3>
+						<p class="mt-4 text-sm text-white/80">
+							Join a subscription box of seasonal beans, tasting notes, and a
+							private story-driven playlist. Cancel anytime.
+						</p>
+					</div>
+					<div class="rounded-2xl bg-white/10 p-6">
+						<p class="text-sm uppercase tracking-[0.2em] text-white/70">
+							From
+						</p>
+						<p class="mt-2 text-4xl font-bold">$24</p>
+						<p class="text-sm text-white/70">per month</p>
+						<button
+							class="mt-6 w-full rounded-full bg-white px-6 py-3 text-sm font-semibold text-[var(--mocha)] hover:bg-white/90 transition"
+							data-membership
+						>
+							Start Membership
+						</button>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="border-t border-black/5 py-8">
+			<div class="mx-auto max-w-6xl px-6 flex flex-col gap-2 md:flex-row md:items-center md:justify-between text-sm text-slate-500">
+				<p>© 2026 Mocha Mousse Coffee House. All rights reserved.</p>
+				<p>Designing your Third Place with warmth & clarity.</p>
+			</div>
+		</footer>
+
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
